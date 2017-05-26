@@ -15,20 +15,49 @@ export default ({ children, title = "", className }: Props) => (
   <div className={className}>
     <Head title={`Title | ${pkg.name}`} />
 
-    <header>
+    <header className="site-header">
       <h1>{pkg.name}</h1>
       <Nav />
     </header>
 
-    {children}
+    <section className="main">
+      <aside>
+        <div>
+          <span className="chap">title</span>
+          <ul>
+            <li><Link href="/basic/install">Install</Link></li>
+            <li><Link href="">Getting Stated</Link></li>
+            <li><Link href="">a</Link></li>
+            <li><Link href="">a</Link></li>
+          </ul>
+        </div>
+        <div>
+          <span className="chap">title</span>
+          <ul>
+            <li><Link href="">a</Link></li>
+            <li><Link href="">a</Link></li>
+            <li><Link href="">a</Link></li>
+            <li><Link href="">a</Link></li>
+          </ul>
+        </div>
+        <div>
+          <span className="chap">title</span>
+          <ul>
+            <li><Link href="">a</Link></li>
+            <li><Link href="">a</Link></li>
+            <li><Link href="">a</Link></li>
+            <li><Link href="">a</Link></li>
+          </ul>
+        </div>
+      </aside>
+      <article>
+        {children}
+      </article>
+    </section>
 
     <footer>
-      <p className="">
-        © 2017
-        {" "}
-        <a href="https://github.com/slothlab">Slothlab</a>
-        . All rights reserved.
-      </p>
+      © 2017 <a href="https://github.com/slothlab">Slothlab</a>
+      . All rights reserved.
     </footer>
   </div>
 );

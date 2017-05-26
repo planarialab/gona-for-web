@@ -51,5 +51,15 @@
     "prettier-eslint-cli": "^4.0.2",
     "replace": "^0.3.0",
     "validate-commit-msg": "^2.12.1"
+  },
+  "config": {
+    "validate-commit-msg": {
+      "preset": "angular",
+      "warnOnFail": false,
+      "maxSubjectLength": 100
+    },
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   }
 }
