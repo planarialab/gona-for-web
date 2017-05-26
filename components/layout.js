@@ -25,28 +25,28 @@ export default ({ children, title = "", className }: Props) => (
         <div>
           <span className="chap">title</span>
           <ul>
-            <li><Link href="/basic/install">Install</Link></li>
-            <li><Link href="">Getting Stated</Link></li>
-            <li><Link href="">a</Link></li>
-            <li><Link href="">a</Link></li>
+            <li><Link href="/basic/install"><a>Install</a></Link></li>
+            <li><Link href=""><a>Getting Stated</a></Link></li>
+            <li><Link href=""><a>a</a></Link></li>
+            <li><Link href=""><a>a</a></Link></li>
           </ul>
         </div>
         <div>
           <span className="chap">title</span>
           <ul>
-            <li><Link href="">a</Link></li>
-            <li><Link href="">a</Link></li>
-            <li><Link href="">a</Link></li>
-            <li><Link href="">a</Link></li>
+            <li><Link href=""><a>a</a></Link></li>
+            <li><Link href=""><a>a</a></Link></li>
+            <li><Link href=""><a>a</a></Link></li>
+            <li><Link href=""><a>a</a></Link></li>
           </ul>
         </div>
         <div>
           <span className="chap">title</span>
           <ul>
-            <li><Link href="">a</Link></li>
-            <li><Link href="">a</Link></li>
-            <li><Link href="">a</Link></li>
-            <li><Link href="">a</Link></li>
+            <li><Link href=""><a>a</a></Link></li>
+            <li><Link href=""><a>a</a></Link></li>
+            <li><Link href=""><a>a</a></Link></li>
+            <li><Link href=""><a>a</a></Link></li>
           </ul>
         </div>
       </aside>
