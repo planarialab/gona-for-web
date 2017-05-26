@@ -1,0 +1,11 @@
+[ignore]
+.*/node_modules/*
+
+[include]
+./pages/
+./components
+
+[libs]
+./flow-typed/
+
+[options]
