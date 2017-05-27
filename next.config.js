@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 module.exports = {
   webpack: config => {
     // Fixes npm packages that depend on `fs` module
@@ -7,38 +9,50 @@ module.exports = {
 
     return config;
   },
-  exportPathMap: () => ({
-    "/": {
-      page: "/",
-      query: { file: "/Users/rhio/Works/my/seed-next-app/docs/index.md" }
-    },
-    "/help": {
-      page: "/",
-      query: { file: "/Users/rhio/Works/my/seed-next-app/docs/help.md" }
-    },
-    "/basic": {
-      page: "/",
-      query: { file: "/Users/rhio/Works/my/seed-next-app/docs/basic/index.md" }
-    },
-    "/basic/install": {
-      page: "/",
-      query: {
-        file: "/Users/rhio/Works/my/seed-next-app/docs/basic/install.md"
+  exportPathMap: () => {
+    const routes = {
+      "/": {
+        page: "/",
+        query: { file: "/Users/rhio/Works/my/seed-next-app/docs/index.md" }
+      },
+      "/help": {
+        page: "/",
+        query: { file: "/Users/rhio/Works/my/seed-next-app/docs/help.md" }
+      },
+      "/p/basic/getting-stated": {
+        page: "/",
+        query: {
+          file: "/Users/rhio/Works/my/seed-next-app/docs/basic/getting-started.md"
+        }
+      },
+      "/p/basic/install": {
+        page: "/",
+        query: {
+          file: "/Users/rhio/Works/my/seed-next-app/docs/basic/install.md"
+        }
+      },
+      "/p/advanced/custom-style": {
+        page: "/",
+        query: {
+          file: "/Users/rhio/Works/my/seed-next-app/docs/advanced/custom-style.md"
+        }
+      },
+      "/p/advanced/theme": {
+        page: "/",
+        query: {
+          file: "/Users/rhio/Works/my/seed-next-app/docs/advanced/theme.md"
+        }
       }
-    },
-    "/advance": {
-      page: "/",
-      query: {
-        file: "/Users/rhio/Works/my/seed-next-app/docs/advance/index.md"
-      }
-    },
-    "/advance/theme": {
-      page: "/",
-      query: {
-        file: "/Users/rhio/Works/my/seed-next-app/docs/advance/theme.md"
-      }
-    }
-  })
+    };
+
+    Object.keys(routes).map((key, i) => {
+      const route = routes[key];
+      route.query.markdown = fs.readFileSync(route.query.file).toString("utf8");
+      return route;
+    });
+
+    return routes;
+  }
 };
 
 // exports.exportPathMap = () => ({

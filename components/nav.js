@@ -7,21 +7,22 @@ type ILink = {
   key?: string
 };
 
+type Props = {
+  url: string,
+  type?: string
+};
+
 const links: ILink[] = [
-  { href: "/", label: "Home" },
-  { href: "https://github.com/rhiokim/.seed-next-app", label: "Github" }
+  { href: "/", label: "Home" }
 ].map((link: ILink, i: number) => {
   link.key = `nav-link-${i}`;
   return link;
 });
 
-const Nav = () => (
+const Nav = ({ url, type }: Props) => (
   <nav className="nav-link">
-    {links.map(({ key, href, label }) => (
-      <Link href={href} key={key}>
-        <a>{label}</a>
-      </Link>
-    ))}
+    {links.map(({ key, href, label }) => <a href={href} key={key}>{label}</a>)}
+    <a href={url}>Github</a>
   </nav>
 );
 
