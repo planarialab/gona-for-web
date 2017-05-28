@@ -29,10 +29,10 @@ export default ({ children, title = "", className }: Props) => (
           <span className="chap">Basic</span>
           <ul>
             <li>
-              <a href="/p/basic/install">Install</a>
+              <a href="/basic/install">Install</a>
             </li>
             <li>
-              <a href="/p/basic/getting-stated">Getting Stated</a>
+              <a href="/basic/getting-started">Getting Stated</a>
             </li>
           </ul>
         </div>
@@ -40,9 +40,9 @@ export default ({ children, title = "", className }: Props) => (
           <span className="chap">Advanced</span>
           <ul>
             <li>
-              <a href="/p/advanced/custom-style">Custom Style</a>
+              <a href="/advanced/custom-style">Custom Style</a>
             </li>
-            <li><a href="/p/advanced/theme">Theme</a></li>
+            <li><a href="/advanced/theme">Theme</a></li>
           </ul>
         </div>
         <div>
