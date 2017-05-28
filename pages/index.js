@@ -6,19 +6,18 @@ import Layout from "../components/layout"
 // import recommended from "remark-preset-lint-recommended"
 
 type Props = {
-  contents: string
+  contents: string,
+  toc: Object
 }
 
-const Docs = ({contents}: Props) => {
-  return (
-    <Layout className="wrap container-fluid" title="Next Note">
-      <div dangerouslySetInnerHTML={{__html: contents}} />
-    </Layout>
-  )
-}
+const Docs = ({contents, toc}: Props) => (
+  <Layout className="wrap container-fluid" title="Next Note" toc={toc}>
+    <div dangerouslySetInnerHTML={{__html: contents}} />
+  </Layout>
+)
 
 Docs.getInitialProps = ({query}) => {
-  return {contents: query.contents}
+  return {...query}
 }
 
 export default Docs

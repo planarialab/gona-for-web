@@ -3,18 +3,20 @@ import type { Element } from "react";
 import Link from "next/link";
 import Head from "./head";
 import Nav from "./nav";
+import Chap from "./chap";
 import pkg from "../package.json";
 
 type Props = {
   children?: Element<any>,
   title?: string,
-  className?: string
+  className?: string,
+  toc?: Object
 };
 
 /*
  * next Link error with export static files
  */
-export default ({ children, title = "", className }: Props) => (
+export default ({ children, title = "", className, toc = {} }: Props) => (
   <div className={className}>
     <Head title={`Title | ${pkg.name}`} />
 
@@ -25,35 +27,15 @@ export default ({ children, title = "", className }: Props) => (
 
     <section className="main">
       <aside>
-        <div>
-          <span className="chap">Basic</span>
-          <ul>
-            <li>
-              <a href="/basic/install">Install</a>
-            </li>
-            <li>
-              <a href="/basic/getting-started">Getting Stated</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <span className="chap">Advanced</span>
-          <ul>
-            <li>
-              <a href="/advanced/custom-style">Custom Style</a>
-            </li>
-            <li><a href="/advanced/theme">Theme</a></li>
-          </ul>
-        </div>
-        <div>
-          <span className="chap">title</span>
-          <ul>
-            <li><Link href=""><a>a</a></Link></li>
-            <li><Link href=""><a>a</a></Link></li>
-            <li><Link href=""><a>a</a></Link></li>
-            <li><Link href=""><a>a</a></Link></li>
-          </ul>
-        </div>
+        {Object.keys(toc).map((key, i) => (
+          <Chap title={key} key={i}>
+            {Object.entries(toc[key]).map((item, i) => (
+              <li key={i}>
+                <a href={item[1]}>{item[0]}</a>
+              </li>
+            ))}
+          </Chap>
+        ))}
       </aside>
       <article>
         {children}

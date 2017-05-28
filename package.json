@@ -60,7 +60,9 @@
     "gh-pages": "^1.0.0",
     "husky": "^0.13.3",
     "prettier-eslint-cli": "^4.0.2",
+    "remark-parse": "^3.0.1",
     "replace": "^0.3.0",
+    "unified": "^6.1.4",
     "validate-commit-msg": "^2.12.1"
   },
   "config": {

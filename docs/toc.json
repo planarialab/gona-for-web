@@ -1,0 +1,10 @@
+{
+  "Basic": {
+    "Install": "/basic/install",
+    "Getting Started": "/basic/getting-started"
+  },
+  "Advanced": {
+    "Theme": "/advanced/theme",
+    "Custom Style": "/advanced/custom-style"
+  }
+}
