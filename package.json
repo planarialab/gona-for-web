@@ -1,6 +1,6 @@
 {
-  "name": "seed-next-app",
-  "version": "0.0.0",
+  "name": "next-note",
+  "version": "0.1.0",
   "description": "Minimalistic framework to generate documentation with Next.js",
   "main": "index.js",
   "license": "MIT",
