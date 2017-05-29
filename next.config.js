@@ -11,6 +11,7 @@ module.exports = {
     return config;
   },
   exportPathMap: async () => {
-    return await pagemap();
+    const res = await pagemap();
+    return res;
   }
 };

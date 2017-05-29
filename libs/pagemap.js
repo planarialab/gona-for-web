@@ -1,34 +1,38 @@
-const readdir = require("recursive-readdir");
-const path = require("path");
 const fs = require("fs");
-const pkg = require("../package.json");
-const toc = require("../docs/toc.json");
+const glob = require("glob");
 const remark = require("remark");
 const html = require("remark-html");
 const recommended = require("remark-preset-lint-recommended");
 
-module.exports = async (rootDir = "docs", ignore = []) => {
-  const baseDir = path.join(process.cwd(), rootDir);
-  const sLen = baseDir.length;
-  const _files = await readdir(baseDir, ignore);
+const content = async file => {
+  let markdown = fs.readFileSync(file).toString("utf8");
+  return await remark().use(recommended).use(html).process(markdown);
+};
+
+const loadToc = cwd => {
+  try {
+    return require(`${process.cwd()}/${cwd}/toc.json`);
+  } catch (e) {
+    throw new Error(
+      `toc.json shoud be exist in ${cwd} directory\n
+      Please see this http://next-note.github.io/`
+    );
+  }
+};
+
+module.exports = async (cwd = "docs") => {
   const routes = {};
+  let toc = loadToc(cwd);
 
-  _files.filter(file => file.lastIndexOf(".md") > -1).map(async file => {
-    let markdown = fs.readFileSync(file).toString("utf8");
-    const note = await remark().use(recommended).use(html).process(markdown);
+  const urls = glob.sync("**/*.md", { cwd: cwd }).forEach(async v => {
+    let url = "/" + v.replace(/\.md$/, "").replace(/index$/, "");
+    const vfile = await content(`${cwd}/${v}`);
 
-    let route = file.slice(sLen, file.length - 3);
-    const matches = /(\/index)$/g.exec(route);
-
-    if (matches !== null) {
-      route = route.slice(0, matches.index + 1);
-    }
-
-    routes[`${route}`] = {
+    routes[url] = {
       page: "/",
       query: {
-        contents: note.contents,
-        toc: toc
+        contents: vfile.contents,
+        toc
       }
     };
   });

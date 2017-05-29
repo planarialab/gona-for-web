@@ -32,6 +32,7 @@
     "commitmsg": "npm run lint:msg"
   },
   "dependencies": {
+    "glob": "^7.1.2",
     "isomorphic-fetch": "^2.2.1",
     "next": "beta",
     "prop-types": "^15.5.10",
