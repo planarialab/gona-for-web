@@ -1,3 +1,0 @@
-## advanced usage
-
-index md

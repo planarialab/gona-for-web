@@ -1,1 +1,0 @@
-## Awesome Next.js Book

@@ -1,17 +1,13 @@
-const fs = require("fs");
-const pagemap = require("./libs/pagemap");
+// const fs = require('fs')
 
 module.exports = {
   webpack: config => {
     // Fixes npm packages that depend on `fs` module
     config.node = {
-      fs: "empty"
-    };
+      fs: 'empty'
+    }
 
-    return config;
+    return config
   },
-  exportPathMap: async () => {
-    const res = await pagemap();
-    return res;
-  }
-};
+  exportPathMap: {}
+}

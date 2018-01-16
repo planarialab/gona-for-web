@@ -1,5 +1,35 @@
-// Place your settings in this file to overwrite default and user settings.
 {
+  // Place your settings in this file to overwrite the default settings
+  "editor.tabSize": 2,
+  "editor.fontSize": 16,
+  "editor.fontFamily": "Roboto Mono Medium for Powerline",
+  // "editor.formatOnSave": true,
+  "editor.renderIndentGuides": true,
+  /* https://stackoverflow.com/questions/44831313/is-it-possible-to-exclude-some-file-extensions-in-format-on-save-in-visual-stu */
+  "[json]": {
+    "editor.formatOnSave": false
+  },
+  "editor.rulers": [80, 120],
+  /* Appearance */
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "Ayu Mirage",
+  "workbench.iconTheme": "vscode-icons",
+  "files.trimTrailingWhitespace": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "extensions.autoUpdate": false,
+  /* Javascript */
+  "eslint.autoFixOnSave": true,
+  // "eslint.enable": true,
+  // "prettier.parser": "babylon",
+  "prettier.printWidth": 120,
+  "prettier.eslintIntegration": true,
+  "flow.useNPMPackagedFlow": false,
+  "javascript.validate.enable": false,
+  "files.associations": {
+    "*.js": "javascriptreact",
+    "*.jsx": "javascriptreact"
+  },
+  /* */
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -8,10 +38,30 @@
     "**/.DS_Store": true,
     "**/.idea": true,
     "**/yarn.lock": true,
-    "**/.vscode": true,
-    "**/.next": true,
-    "**/out": true,
+    "**/.vscode": true
+  },
+  "search.exclude": {
     "**/node_modules": true,
-    "**/flow-typed/npm/": true
-  }
+    "**/bower_components": true,
+    "**/.git": true,
+    "**/coverage": true,
+    "**/build": true,
+    "**/dist": true
+  },
+  /* Internal Terminal */
+  "terminal.integrated.fontSize": 14,
+  "material-icon-theme.showUpdateMessage": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressUpdateNotice": true,
+    "suppressWelcomeNotice": true
+  },
+  "git.enableSmartCommit": true,
+  "sort-imports.on-save": true
 }

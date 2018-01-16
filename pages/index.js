@@ -1,23 +1,51 @@
 // @flow
-import React from "react"
-import Layout from "../components/layout"
-// import remark from "remark"
-// import html from "remark-html"
-// import recommended from "remark-preset-lint-recommended"
+import * as React from 'react'
+
+import { add, startClock } from '../actions/basic'
+
+import { Home } from '../components/Home'
+import { Layout } from '../components/Layout'
+import Link from 'next/link'
+import { bindActionCreators } from 'redux'
+import configureStore from '../store'
+import withRedux from 'next-redux-wrapper'
 
 type Props = {
-  contents: string,
-  toc: Object
+  add: () => void,
+  startClock: () => number
 }
 
-const Docs = ({contents, toc}: Props) => (
-  <Layout className="wrap container-fluid" title="Next Note" toc={toc}>
-    <div dangerouslySetInnerHTML={{__html: contents}} />
-  </Layout>
-)
+const mapDispatchToProps = dispatch => ({
+  add: bindActionCreators(add, dispatch),
+  startClock: bindActionCreators(startClock, dispatch)
+})
 
-Docs.getInitialProps = ({query}) => {
-  return {...query}
+class Index extends React.Component<Props, null> {
+  timer: number
+
+  static getInitialProps ({ store, isServer }) {
+    return { isServer }
+  }
+
+  componentDidMount () {
+    this.timer = this.props.startClock()
+  }
+
+  componentWillUnmount () {
+    clearInterval(this.timer)
+  }
+
+  render () {
+    return (
+      <Layout>
+        <Link href="/about">
+          <a>TTCC Corp!!!</a>
+        </Link>
+        <Home />
+      </Layout>
+    )
+  }
 }
 
-export default Docs
+// export default Index
+export default withRedux(configureStore, null, mapDispatchToProps)(Index)
