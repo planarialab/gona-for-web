@@ -3,9 +3,8 @@ import * as React from 'react'
 
 import { add, startClock } from '../actions/basic'
 
-import { Home } from '../components/Home'
+import Home from '../components/Home'
 import { Layout } from '../components/Layout'
-import Link from 'next/link'
 import { bindActionCreators } from 'redux'
 import configureStore from '../store'
 import withRedux from 'next-redux-wrapper'
@@ -38,14 +37,10 @@ class Index extends React.Component<Props, null> {
   render () {
     return (
       <Layout>
-        <Link href="/about">
-          <a>TTCC Corp!!!</a>
-        </Link>
         <Home />
       </Layout>
     )
   }
 }
 
-// export default Index
 export default withRedux(configureStore, null, mapDispatchToProps)(Index)
