@@ -15,13 +15,12 @@ const mapStateToProps = state => ({
 })
 
 const Home = (props: Props) => (
-// export default connect(state => state.basic)(({ lastUpdate, light}) => (
+  // export default connect(state => state.basic)(({ lastUpdate, light}) => (
   <div>
     <Link href="/about">
       <a>About</a>
     </Link>
-      Hello World.
-
+    Hello World.
     <Clock lastUpdate={props.lastUpdate} light={props.light} />
   </div>
 )
