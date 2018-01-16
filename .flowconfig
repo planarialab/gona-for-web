@@ -1,6 +1,8 @@
 [ignore]
 .*/node_modules/*
 .*/__test__/.*
+./out
+./.next
 
 [include]
 

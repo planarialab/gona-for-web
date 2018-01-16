@@ -31,7 +31,13 @@ export default class extends Document {
           <meta name="twitter:description" content="SITE_DESCRIPTION" />
           <meta property="twitter:image" content="SITE_IMAGE" />
 
+          <link rel="stylesheet" href="/static/css/normalize.css" />
+          <link rel="stylesheet" href="/static/css/main.css" />
           <link rel="shortcut icon" href="/static/img/favicon.ico" />
+
+          <noscript>
+            <link rel="stylesheet" href="assets/css/noscript.css" />
+          </noscript>
         </Head>
         <body>
           <Main />
