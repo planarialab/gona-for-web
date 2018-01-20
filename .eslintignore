@@ -3,3 +3,5 @@ node_modules/**
 **/*.html
 src/**/*-test.js
 flow-typed
+out
+.next
