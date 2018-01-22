@@ -1,13 +1,11 @@
 // @flow
 import * as React from 'react'
-
-import { add, startClock } from '../actions/basic'
-
-import Home from '../components/Home'
-import { Layout } from '../components/Layout'
 import { bindActionCreators } from 'redux'
-import configureStore from '../store'
 import withRedux from 'next-redux-wrapper'
+
+import Home from './home/Home'
+import configureStore from './store'
+import { add, startClock } from './actions/basic'
 
 type Props = {
   add: () => void,
@@ -35,11 +33,7 @@ class Index extends React.Component<Props, null> {
   }
 
   render () {
-    return (
-      <Layout>
-        <Home />
-      </Layout>
-    )
+    return <Home />
   }
 }
 
