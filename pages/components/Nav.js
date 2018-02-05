@@ -31,14 +31,18 @@ const Nav = (props: Props) => {
       </ul>
       <ul className="icons">
         <li>
-          <a href="#" className="icon fa-twitter">
-            <span className="label">Twitter</span>
-          </a>
+          <Link prefetch href="/a">
+            <a className="icon fa-twitter">
+              <span className="label">Twitter</span>
+            </a>
+          </Link>
         </li>
         <li>
-          <a href="#" className="icon fa-facebook">
-            <span className="label">Facebook</span>
-          </a>
+          <Link href="/b">
+            <a className="icon fa-facebook">
+              <span className="label">Facebook</span>
+            </a>
+          </Link>
         </li>
         <li>
           <a href="#" className="icon fa-instagram">

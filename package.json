@@ -13,9 +13,10 @@
     "email": "rhio.kim@gmail.com"
   },
   "scripts": {
-    "dev": "next",
+    "dev:koa": "NODE_ENV=development node server.js",
     "build": "next build && next export",
     "start": "next start",
+    "start:koa": "NODE_ENV=production node server.js",
     "lint": "eslint --format=node_modules/eslint-formatter-pretty './**/*.@(js|jsx)'",
     "lint:msg": "validate-commit-msg",
     "flow": "flow",
@@ -32,6 +33,8 @@
   },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
+    "koa": "^2.4.1",
+    "koa-router": "^7.4.0",
     "next": "^4.2.3",
     "next-redux-wrapper": "^1.3.5",
     "next-routes": "^1.2.0",
