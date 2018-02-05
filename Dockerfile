@@ -1,14 +1,16 @@
-FROM node:9
-MAINTAINER rhio@titicaca-corp.com
+FROM node:alpine
+MAINTAINER rhio.kim@gmail.com
 
-# RUN mkdir -p /app
-# WORKDIR /app
+RUN mkdir -p /app
+WORKDIR /app
 
-# COPY package.json ./
-# RUN npm install --production
-# COPY dist/ ./dist/
-# COPY config/ ./config/
-# COPY protos/ ./protos/
+COPY package.json ./
+RUN npm install --prod
+
+COPY .next .next
+COPY static static
+
+ENV NODE_ENV 'production'
 
 EXPOSE 3000
 

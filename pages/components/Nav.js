@@ -23,6 +23,11 @@ const Nav = (props: Props) => {
             <a>Elements Reference</a>
           </Link>
         </li>
+        <li>
+          <Link href="/posts">
+            <a>Posts</a>
+          </Link>
+        </li>
       </ul>
       <ul className="icons">
         <li>
