@@ -1,6 +1,7 @@
 // @flow
 import React from 'react'
 import Link from 'next/link'
+import Router from 'next/router'
 
 type Props = {}
 
@@ -39,7 +40,13 @@ const Nav = (props: Props) => {
         </li>
         <li>
           <Link href="/b">
-            <a className="icon fa-facebook">
+            <a
+              onMouseEnter={() => {
+                Router.prefetch('/b')
+                console.log('prefetching /b!')
+              }}
+              className="icon fa-facebook"
+            >
               <span className="label">Facebook</span>
             </a>
           </Link>
