@@ -1,37 +1,26 @@
 const Koa = require('koa')
 const next = require('next')
-const Router = require('koa-router')
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
-const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
   const server = new Koa()
-  const router = new Router()
 
-  router.get('/a', async ctx => {
-    await app.render(ctx.req, ctx.res, '/b', ctx.query)
-    ctx.respond = false
-  })
-
-  router.get('/b', async ctx => {
-    await app.render(ctx.req, ctx.res, '/a', ctx.query)
-    ctx.respond = false
-  })
-
-  router.get('*', async ctx => {
-    await handle(ctx.req, ctx.res)
-    ctx.respond = false
-  })
+  const routes = require('./routes')(app)
 
   server.use(async (ctx, next) => {
-    ctx.res.statusCode = 200
+    const start = Date.now()
+    const ms = Date.now() - start
+    ctx.set('X-Response-Time', `${ms}ms`)
     await next()
   })
 
-  server.use(router.routes())
+  Object.keys(routes).forEach(name => {
+    server.use(routes[name])
+  })
+
   server.listen(port, err => {
     if (err) throw err
     console.log(`> Ready on http://localhost:${port}`)

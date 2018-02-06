@@ -52,9 +52,11 @@ const Nav = (props: Props) => {
           </Link>
         </li>
         <li>
-          <a href="#" className="icon fa-instagram">
-            <span className="label">Instagram</span>
-          </a>
+          <Link href="/users">
+            <a className="icon fa-instagram">
+              <span className="label">Instagram</span>
+            </a>
+          </Link>
         </li>
         <li>
           <a href="#" className="icon fa-github">
