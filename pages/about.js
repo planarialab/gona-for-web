@@ -1,6 +1,6 @@
 // @flow
 import React from 'react'
-import { Nav, Footer, Copyright } from './components'
+import { Nav, Footer, Copyright } from '../components'
 
 type Props = {}
 

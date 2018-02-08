@@ -2,7 +2,7 @@
 import React from 'react'
 import { Link } from 'next/link'
 import fetch from 'isomorphic-fetch'
-import { Nav, Footer, Copyright } from './components'
+import { Nav, Footer, Copyright } from '../components'
 import PostItem from './posts/PostItem'
 
 type Props = {

@@ -4,8 +4,8 @@ import { bindActionCreators } from 'redux'
 import withRedux from 'next-redux-wrapper'
 
 import Home from './home/Home'
-import configureStore from './store'
-import { add, startClock } from './actions/basic'
+import configureStore from '../store'
+import { add, startClock } from '../actions/basic'
 
 type Props = {
   add: () => void,
