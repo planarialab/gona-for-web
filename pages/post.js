@@ -8,58 +8,63 @@ type Props = {
   author: any
 }
 
-const Post = ({ post, author }: Props) => (
-  <div id="wrapper">
-    {/* Header */}
-    <header id="header">
-      <a href="index.html" className="logo">
-        Massively
-      </a>
-    </header>
+// const Post = ({ post, author }: Props) => (
+export default class extends React.Component<Props> {
+  static getInitialProps = async ({ query: { id } }) => {
+    const resA = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    const post = await resA.json()
 
-    {/* Nav */}
-    <Nav />
+    const resB = await fetch(
+      `https://jsonplaceholder.typicode.com/users/${post.userId}`
+    )
+    const author = await resB.json()
 
-    {/* Main */}
-    <div id="main">
-      <style jsx>{`
-        small {
-          color: #aaa;
-          font-size: 0.7em;
-        }
-        .author-site {
-          float: right;
-        }
-      `}</style>
-      <div>
-        <span>
-          author: {author.name} <small>&lt;{author.email}&gt;</small>
-        </span>
-        <span className="author-site">
-          website:{' '}
-          <a href={`//${author.website}`} target="_blank">
-            {author.website}
+    return { post, author }
+  }
+
+  render () {
+    const { author, post } = this.props
+    return (
+      <div id="wrapper">
+        {/* Header */}
+        <header id="header">
+          <a href="index.html" className="logo">
+            Massively
           </a>
-        </span>
+        </header>
+
+        {/* Nav */}
+        <Nav />
+
+        {/* Main */}
+        <div id="main">
+          <style jsx>{`
+            small {
+              color: #aaa;
+              font-size: 0.7em;
+            }
+            .author-site {
+              float: right;
+            }
+          `}</style>
+          <div>
+            <span>
+              author: {author.name} <small>&lt;{author.email}&gt;</small>
+            </span>
+            <span className="author-site">
+              website:{' '}
+              <a href={`//${author.website}`} target="_blank">
+                {author.website}
+              </a>
+            </span>
+          </div>
+          <h3>{post.title}</h3>
+          <article>{post.body}</article>
+        </div>
+
+        {/* Copyright */}
+        <Copyright />
       </div>
-      <h3>{post.title}</h3>
-      <article>{post.body}</article>
-    </div>
-
-    {/* Copyright */}
-    <Copyright />
-  </div>
-)
-
-Post.getInitialProps = async ({ query: { id } }) => {
-  const resA = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-  const post = await resA.json()
-
-  const resB = await fetch(
-    `https://jsonplaceholder.typicode.com/users/${post.userId}`
-  )
-  const author = await resB.json()
-  return { post, author }
+    )
+  }
 }
-
-export default Post

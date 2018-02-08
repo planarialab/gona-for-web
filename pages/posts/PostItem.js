@@ -10,7 +10,7 @@ type Props = {
 const PostItem = ({ id, title }: Props) => {
   return (
     <li>
-      <Link href={`/post?id=${id}`} as={`/post?id=${id}`}>
+      <Link as={`/post/${id}`} href={`/post?id=${id}`}>
         <a>{title}</a>
       </Link>
     </li>

@@ -1,24 +1,28 @@
-const Koa = require('koa')
+const express = require('express')
 const next = require('next')
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
+const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
-  const server = new Koa()
+  const server = express()
 
-  const routes = require('./routes')(app)
+  /* Server API */
+  // server.use('/api', someRoutes)
 
-  server.use(async (ctx, next) => {
-    const start = Date.now()
-    const ms = Date.now() - start
-    ctx.set('X-Response-Time', `${ms}ms`)
-    await next()
+  /* Server Side Rendering */
+  server.get('/post/:id', async (req, res) => {
+    await app.render(req, res, '/post', req.params)
   })
 
-  Object.keys(routes).forEach(name => {
-    server.use(routes[name])
+  // server.get('/users/:id', async (req, res) => {
+  //   await app.render(req, res, '/users', req.params)
+  // })
+
+  server.get('*', (req, res) => {
+    return handle(req, res)
   })
 
   server.listen(port, err => {

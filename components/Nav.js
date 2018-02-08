@@ -20,6 +20,11 @@ const Nav = (props: Props) => {
           </Link>
         </li>
         <li>
+          <Link href="/example">
+            <a>example</a>
+          </Link>
+        </li>
+        <li>
           <Link href="/elements">
             <a>Elements Reference</a>
           </Link>
