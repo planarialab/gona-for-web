@@ -1,5 +1,5 @@
 FROM node:alpine
-MAINTAINER rhio.kim@gmail.com
+LABEL maintainer="rhio.kim@gmail.com"
 
 RUN mkdir -p /app
 WORKDIR /app
