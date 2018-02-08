@@ -9,9 +9,11 @@ RUN npm install --prod
 
 COPY .next .next
 COPY static static
+COPY routes routes
+COPY server.js server.js
 
 ENV NODE_ENV 'production'
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["node", "server"]
