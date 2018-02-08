@@ -1,7 +1,7 @@
 // @flow
 import React from 'react'
 
-import { Nav, Copyright } from './components'
+import { Nav, Copyright } from '../components'
 
 export default () => (
   <div id="wrapper">

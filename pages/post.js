@@ -1,7 +1,7 @@
 // @flow
 import React from 'react'
 import fetch from 'isomorphic-fetch'
-import { Nav, Footer, Copyright } from './components'
+import { Nav, Footer, Copyright } from '../components'
 
 type Props = {
   post: any,

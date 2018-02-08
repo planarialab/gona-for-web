@@ -27,7 +27,7 @@
     "commitmsg": "npm run lint:msg",
     "docker:build": "docker build --tag seed-next-app . && npm run docker:images",
     "docker:images": "docker images | grep seed-next-app",
-    "docker:run": "docker run -dit -p 8081:80 --name seed-next-app seed-next-app:latest",
+    "docker:run": "docker run -dit -p 8081:3000 --name seed-next-app seed-next-app:latest",
     "docker:rm": "docker rm -f seed-next-app",
     "docker": "npm run docker:rm && npm run docker:build && npm run docker:run"
   },
