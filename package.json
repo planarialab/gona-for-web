@@ -14,8 +14,9 @@
   },
   "scripts": {
     "dev:koa": "NODE_ENV=development node server.js",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
+    "static": "next export",
     "start:koa": "NODE_ENV=production node server.js",
     "lint": "eslint --format=node_modules/eslint-formatter-pretty './**/*.@(js|jsx)'",
     "lint:msg": "validate-commit-msg",
