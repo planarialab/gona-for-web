@@ -16,7 +16,7 @@ export default () => (
 
     {/* Main */}
     <div id="main">
-      <Link href="#">
+      <Link href="/example/scss">
         <a>scss</a>
       </Link>
     </div>
