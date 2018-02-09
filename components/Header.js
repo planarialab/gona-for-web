@@ -3,7 +3,7 @@ import React from 'react'
 
 type Props = {}
 
-export class Header extends React.Component<Props> {
+export default class Header extends React.Component<Props> {
   render () {
     return (
       <div className="row header">

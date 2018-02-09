@@ -6,3 +6,7 @@
   @include pt(10px);
   @include mt(5px);
 }
+
+.text-danger {
+  color: $color-danger;
+}

@@ -3,6 +3,7 @@ import * as React from 'react'
 import { bindActionCreators } from 'redux'
 import withRedux from 'next-redux-wrapper'
 
+import { Layout } from '../components'
 import Home from './home/Home'
 import configureStore from '../store'
 import { add, startClock } from '../actions/basic'
@@ -33,7 +34,11 @@ class Index extends React.Component<Props, null> {
   }
 
   render () {
-    return <Home />
+    return (
+      <Layout>
+        <Home />
+      </Layout>
+    )
   }
 }
 

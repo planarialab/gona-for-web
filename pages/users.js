@@ -1,5 +1,10 @@
 // @flow
 
 import React from 'react'
+import { Layout } from '../components'
 
-export default () => <div>users</div>
+export default () => (
+  <Layout>
+    <div>users</div>
+  </Layout>
+)

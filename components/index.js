@@ -1,7 +1,9 @@
 // @flow
 
+import Layout from './Layout'
 import Nav from './Nav'
 import Footer from './Footer'
 import Copyright from './Copyright'
+import Header from './Header'
 
-export { Nav, Footer, Copyright }
+export { Layout, Nav, Header, Footer, Copyright }

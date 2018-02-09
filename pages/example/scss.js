@@ -3,19 +3,20 @@ import React from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 
-import style from '../../styles/style.scss'
+import { Layout } from '../../components'
+import '../../styles/style.scss'
 
 export default () => (
-  <React.Fragment>
+  <Layout>
     <Head>
       <link rel="stylesheet" href="/_next/static/style.css" />
     </Head>
-    <div className={style.example}>
-      <h1>SCSS Example</h1>
+    <div>
+      <h1 className="text-danger">SCSS Example</h1>
       <Link href="/">
         <a>home</a>
       </Link>
-      <span>scss text</span>
+      <span className="example">scss text</span>
     </div>
-  </React.Fragment>
+  </Layout>
 )
