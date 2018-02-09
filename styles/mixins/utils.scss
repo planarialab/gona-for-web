@@ -1,0 +1,11 @@
+@mixin pt($n) {
+  padding-top: $n;
+}
+
+@mixin mt($n) {
+  margin-top: $n;
+}
+
+@mixin mb($n) {
+  margin-bottom: $n;
+}

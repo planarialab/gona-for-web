@@ -1,5 +1,8 @@
-$color: #2ecc71;
+@import "mixins/vars";
+@import "mixins/utils";
 
 .example {
-  color: red;
+  color: $color;
+  @include pt(10px);
+  @include mt(5px);
 }
