@@ -4,12 +4,22 @@ This's seed project built on top of next.js
 
 ## Features
 
+## Technical Features
+
+**production**
+
 * next@latest
 * react@latest
-* redux@latest
+* redux, redux-thunk
 * next-redux-wrapper
-* flowtype
-* eslint
+* express
+* jest?
+
+**development**
+
+* babel, eslint, flowtype
+* prettier
+* commitizen, husky, validate-commit-message
 
 ## How to use
 
@@ -27,7 +37,27 @@ install it and run:
 
 ```bash
 npm install
-npm run dev
+npm run dev:express
+npm run build
+npm run start
+npm run start:express
+npm run static
+```
+
+and then, if you want to use static typing with flow run follow after install `flow-typed`
+
+```bash
+flow-typed install
+```
+
+with docker
+
+```bash
+npm run build          #0
+npm run docker:build   #1
+npm run docker:run     #2
+npm run docker:rm      #3
+npm run docker // run all step without 0 step
 ```
 
 ## LICENSE
