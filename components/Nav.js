@@ -44,11 +44,11 @@ const Nav = (props: Props) => {
           </Link>
         </li>
         <li>
-          <Link href="/b">
+          <Link href="/portal">
             <a
               onMouseEnter={() => {
-                Router.prefetch('/b')
-                console.log('prefetching /b!')
+                Router.prefetch('/portal')
+                console.log('prefetching /portal!')
               }}
               className="icon fa-facebook"
             >
@@ -64,7 +64,7 @@ const Nav = (props: Props) => {
           </Link>
         </li>
         <li>
-          <a href="#" className="icon fa-github">
+          <a href="/albums" className="icon fa-github">
             <span className="label">GitHub</span>
           </a>
         </li>
