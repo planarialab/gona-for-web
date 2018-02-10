@@ -3,6 +3,7 @@
     "next/babel"
   ],
   "plugins": [
+    ["transform-define", "./env.config.js"],
     "transform-flow-strip-types"
   ]
 }

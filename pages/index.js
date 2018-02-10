@@ -36,6 +36,7 @@ class Index extends React.Component<Props, null> {
   render () {
     return (
       <Layout>
+        <small>Loading data from {process.env.BACKEND_URL}</small>
         <Home />
       </Layout>
     )

@@ -21,6 +21,12 @@ This's seed project built on top of next.js
 * prettier
 * commitizen, husky, validate-commit-message
 
+**others**
+
+* universal configuration
+* nprogress
+* with-sass
+
 ## How to use
 
 ### Download manually
