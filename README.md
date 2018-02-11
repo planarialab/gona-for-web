@@ -26,6 +26,8 @@ This's seed project built on top of next.js
 * universal configuration
 * nprogress
 * with-sass
+* ssr-caching with lru-cache
+* dockerize
 
 ## How to use
 
