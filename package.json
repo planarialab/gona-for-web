@@ -19,12 +19,11 @@
     "start": "next start",
     "static": "next export",
     "start:express": "NODE_ENV=production node server.js",
-    "lint": "eslint --format=node_modules/eslint-formatter-pretty './**/*.@(js|jsx)'",
+    "lint": "eslint --format=node_modules/eslint-formatter-pretty './**/*.@(js)'",
     "lint:msg": "validate-commit-msg",
     "flow": "flow",
-    "format": "prettier-eslint --write './**/*.@(js|jsx)'",
+    "format": "prettier-eslint --write './**/*.@(js)'",
     "commit": "git cz",
-    "precommit": "npm run format",
     "prepush": "npm test",
     "commitmsg": "npm run lint:msg",
     "docker:build": "docker build --tag seed-next-app . && npm run docker:images",
@@ -59,7 +58,7 @@
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-flow": "^1.0.1",
     "eslint-formatter-pretty": "^1.1.0",
-    "eslint-plugin-flowtype": "^2.42.0",
+    "eslint-plugin-flowtype": "^2.43.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-node": "^6.0.0",
@@ -75,6 +74,11 @@
     "prettier-eslint-cli": "^4.3.2",
     "rimraf": "^2.6.2",
     "validate-commit-msg": "^2.12.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format"
+    }
   },
   "flow-coverage-report": {
     "includeGlob": [
