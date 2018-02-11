@@ -4,6 +4,7 @@
   "description": "Seed Project based on Next.js",
   "main": "index.js",
   "license": "MIT",
+  "private": true,
   "repository": {
     "url": "https://github.com/rhiokim/.seed-next-app",
     "type": "git"
@@ -22,10 +23,11 @@
     "lint": "eslint --format=node_modules/eslint-formatter-pretty './**/*.@(js)'",
     "lint:msg": "validate-commit-msg",
     "flow": "flow",
-    "format": "prettier-eslint --write './**/*.@(js)'",
+    "format": "prettier-eslint --print-width 80 --write './**/*.@(js)'",
     "commit": "git cz",
-    "prepush": "npm test",
     "commitmsg": "npm run lint:msg",
+    "precommit": "lint-staged",
+    "prepush": "npm test",
     "docker:build": "docker build --tag seed-next-app . && npm run docker:images",
     "docker:images": "docker images | grep seed-next-app",
     "docker:run": "docker run -dit -p 8081:3000 --name seed-next-app seed-next-app:latest",
@@ -69,16 +71,18 @@
     "flow-coverage-report": "^0.4.1",
     "flow-typed": "^2.3.0",
     "husky": "^0.14.3",
+    "lint-staged": "^6.1.0",
     "node-sass": "^4.7.2",
     "npm-run-all": "^4.1.1",
     "prettier-eslint-cli": "^4.3.2",
     "rimraf": "^2.6.2",
     "validate-commit-msg": "^2.12.1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run format"
-    }
+  "lint-staged": {
+    "*.js": [
+      "format",
+      "git add"
+    ]
   },
   "flow-coverage-report": {
     "includeGlob": [

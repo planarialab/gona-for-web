@@ -27,9 +27,9 @@ const Home = (props: Props) => (
           </a>
         </h2>
         <p>
-          Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-          facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-          amet nullam sed etiam veroeros.
+          Aenean ornare velit lacus varius enim ullamcorper proin aliquam
+          facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor amet
+          nullam sed etiam veroeros.
         </p>
       </header>
       <a href="#" className="image main">

@@ -3,7 +3,7 @@
   "editor.tabSize": 2,
   "editor.fontSize": 16,
   "editor.fontFamily": "Roboto Mono Medium for Powerline",
-  // "editor.formatOnSave": true,
+  "editor.formatOnSave": true,
   "editor.renderIndentGuides": true,
   /* https://stackoverflow.com/questions/44831313/is-it-possible-to-exclude-some-file-extensions-in-format-on-save-in-visual-stu */
   "[json]": {
@@ -18,10 +18,10 @@
   "vsicons.dontShowNewVersionMessage": true,
   "extensions.autoUpdate": false,
   /* Javascript */
-  "eslint.autoFixOnSave": true,
-  // "eslint.enable": true,
-  // "prettier.parser": "babylon",
-  "prettier.printWidth": 120,
+  // "eslint.autoFixOnSave": true,
+  "eslint.enable": true,
+  "prettier.parser": "babylon",
+  "prettier.printWidth": 80,
   "prettier.eslintIntegration": true,
   "flow.useNPMPackagedFlow": false,
   "javascript.validate.enable": false,
