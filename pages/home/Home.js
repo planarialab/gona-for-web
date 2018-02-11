@@ -2,7 +2,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { Nav, Footer, Copyright } from '../../components'
 import Clock from './Clock'
 
 type Props = {
