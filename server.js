@@ -1,5 +1,6 @@
 const express = require('express')
 const next = require('next')
+const { join } = require('path')
 const routes = require('./routes')
 const Cache = require('./middlewares/lru-cache')
 
@@ -14,6 +15,16 @@ app.prepare().then(() => {
 
   /* Server API */
   // server.use('/api', someRoutes)
+
+  /* Service Worker */
+  server.use((req, res, next) => {
+    if (req.url === '/service-worker.js') {
+      const filePath = join(__dirname, '.next', req.url)
+      app.serveStatic(req, res, filePath)
+    } else {
+      next()
+    }
+  })
 
   /* LRU Cache */
   server.get('/albums/:id', (req, res) => {
