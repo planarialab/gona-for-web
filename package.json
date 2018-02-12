@@ -1,6 +1,6 @@
 {
   "name": "seed-next-app",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Seed Project based on Next.js",
   "main": "index.js",
   "license": "MIT",
