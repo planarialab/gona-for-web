@@ -1,5 +1,7 @@
 const express = require('express')
 const next = require('next')
+const helmet = require('helmet')
+const compression = require('compression')
 const { resolve } = require('path')
 const { Cache } = require('./server/middlewares')
 const routes = require('./routes')
@@ -18,10 +20,11 @@ const routeHandler = routes.getRequestHandler(
   }
 )
 
-const compression = require('compression')
 app.prepare().then(() => {
   const server = express()
 
+  /* secure */
+  server.use(helmet())
   /* gzip */
   server.use(compression({ threshold: 0 }))
 

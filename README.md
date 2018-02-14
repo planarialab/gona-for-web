@@ -24,10 +24,12 @@ This's seed project built on top of next.js
 **others**
 
 * universal configuration
-* nprogress
-* with-sass
-* ssr-caching with lru-cache
-* service worker for pre-cache
+* nprogress with `nprogress`
+* with-sass with `@next/with-sass`
+* ssr-caching with lru-cache with `node-lru-cache`
+* service worker for pre-cache with `service-worker`
+* gzip compression with `compression`
+* secure headers with `helmet`
 * dockerize
 
 ## How to use
