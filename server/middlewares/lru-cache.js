@@ -38,7 +38,7 @@ module.exports = app => {
       // Let's cache this page
       ssrCache.set(key, html)
 
-      res.setHeader('x-lru-cache', 'MISS')
+      res.setHeader('x-cache', 'MISS')
       res.send(html)
     } catch (err) {
       app.renderError(err, req, res, pagePath, queryParams)
