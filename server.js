@@ -2,7 +2,7 @@ const express = require('express')
 const next = require('next')
 const { join } = require('path')
 const routes = require('./routes')
-const Cache = require('./middlewares/lru-cache')
+const { Cache } = require('./server/middlewares')
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
