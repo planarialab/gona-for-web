@@ -1,48 +1,12 @@
-# .seed-next-app
+# Gona for web
 
-This's seed project built on top of next.js
+This project is web version of [GONA App](https://rhiokim.github.io/gona/)
 
 ## Features
 
-## Technical Features
-
-**production**
-
-* next@latest
-* react@latest
-* redux, redux-thunk
-* next-redux-wrapper
-* express
-* jest?
-
-**development**
-
-* babel, eslint, flowtype
-* prettier
-* commitizen, husky, validate-commit-message
-
-**others**
-
-* universal configuration
-* nprogress with `nprogress`
-* with-sass with `@next/with-sass`
-* ssr-caching with lru-cache with `node-lru-cache`
-* service worker for pre-cache with `service-worker`
-* gzip compression with `compression`
-* secure headers with `helmet`
-* dockerize
-
 ## How to use
 
-### Download manually
-
-Download the example [or clone the repo](https://github.com/rhiokim/.seed-next-app):
-
-```bash
-mkdir my-new-next-app
-curl https://codeload.github.com/rhiokim/.seed-next-app/tar.gz/master | tar -xz --strip=1
- -C my-new-next-app
-```
+### Development
 
 install it and run:
 

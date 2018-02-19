@@ -1,12 +1,12 @@
 {
-  "name": "seed-next-app",
+  "name": "gona-for-web",
   "version": "0.3.0",
-  "description": "Seed Project based on Next.js",
+  "description": "",
   "main": "index.js",
   "license": "MIT",
   "private": true,
   "repository": {
-    "url": "https://github.com/rhiokim/.seed-next-app",
+    "url": "https://github.com/planaria/gona-for-web",
     "type": "git"
   },
   "author": {
