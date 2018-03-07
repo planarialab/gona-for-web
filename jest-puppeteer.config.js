@@ -1,6 +1,6 @@
 module.exports = {
   server: {
-    command: 'NODE_ENV=development node server.js',
+    command: 'npm run build && npm run start:express',
     port: 3000
   },
   launch: {

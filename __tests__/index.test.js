@@ -1,9 +1,15 @@
-describe('Google', () => {
-  beforeAll(async () => {
-    await page.goto('https://google.com')
+describe('/ (Home Page)', () => {
+  beforeEach(async () => {
+    await page.goto('http://localhost:3000')
   })
 
-  it('should display "google" text on page', async () => {
-    await expect(page).toMatch('google')
+  it('should load without error', async () => {
+    await expect(page).toMatch('This is Massively')
+  })
+
+  it('should click using selector', async () => {
+    await expect(page).toClick('a[href="/about"]')
+    const { pathname } = await page.evaluate(() => document.location)
+    expect(pathname).toBe('/about')
   })
 })
