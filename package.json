@@ -76,10 +76,12 @@
     "flow-coverage-report": "^0.5.0",
     "flow-typed": "^2.3.0",
     "husky": "^0.14.3",
+    "jest-puppeteer-preset": "^2.0.0",
     "lint-staged": "^7.0.0",
     "node-sass": "^4.7.2",
     "npm-run-all": "^4.1.1",
     "prettier-eslint-cli": "^4.7.1",
+    "puppeteer": "^1.1.1",
     "rimraf": "^2.6.2",
     "validate-commit-msg": "^2.14.0"
   },
