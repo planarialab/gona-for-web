@@ -1,10 +1,9 @@
 module.exports = {
   server: {
-    command: 'npm run dev:express',
-    port: 4444
+    command: 'NODE_ENV=development node server.js',
+    port: 3000
   },
   launch: {
-    dumpio: true,
-    headless: process.env.HEADLESS !== 'false'
+    headless: process.env.CI === 'true'
   }
 }
