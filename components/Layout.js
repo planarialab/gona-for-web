@@ -4,6 +4,7 @@ import Head from 'next/head'
 import NProgress from 'nprogress'
 import Router from 'next/router'
 
+import '../styles/bulma.sass'
 import { Nav, Footer, Copyright } from './'
 
 Router.onRouteChangeStart = url => {
@@ -17,44 +18,47 @@ type Props = {
 }
 
 export default class Layout extends React.Component<Props, {}> {
+  componentDidMount () {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/service-worker.js')
+        .then(registration =>
+          console.info('service worker registration successful')
+        )
+        .catch(err =>
+          console.warn('service worker registration failed', err.message)
+        )
+    }
+  }
+
   render () {
     const { children } = this.props
     return (
-      <div className="container-fluid">
+      <React.Fragment>
         <Head>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-          />
           <link
             rel="stylesheet"
             type="text/css"
             href="/static/css/nprogress.css"
           />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="/static/css/font-awesome.min.css"
+          />
+          <link rel="stylesheet" href="/_next/static/style.css" />
         </Head>
-        <div id="wrapper">
-          {/* Header */}
-          <header id="header">
-            <a href="index.html" className="logo">
-              Massively
-            </a>
-          </header>
 
-          {/* Nav */}
-          <Nav />
-
-          {/* Main */}
-          <div id="main">
-            <main>{children}</main>
-          </div>
-
-          {/* Footer */}
-          <Footer />
-
-          {/* Copyright */}
-          <Copyright />
+        {/* Main */}
+        <div>
+          <main>{children}</main>
         </div>
-      </div>
+
+        {/* Footer */}
+        <Footer />
+
+        {/* Copyright */}
+      </React.Fragment>
     )
   }
 }

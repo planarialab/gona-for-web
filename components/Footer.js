@@ -5,74 +5,83 @@ type Props = {}
 
 const Footer = (props: Props) => {
   return (
-    <footer id="footer">
-      <section>
-        <form method="post" action="#">
-          <div className="field">
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" />
+    <footer>
+      <div className="container">
+        <div className="columns">
+          <div className="column has-text-centered">
+            <a href="/">
+              <strong>Gona</strong>
+            </a>
           </div>
-          <div className="field">
-            <label htmlFor="email">Email</label>
-            <input type="text" name="email" id="email" />
+
+          <div className="column is-offset-one-quarter">
+            <div className="footer-item-header">Product</div>
+            <ul className="list-unstyled">
+              <li>
+                <a href="/account" className="footer-item">
+                  Account
+                </a>
+              </li>
+              <li>
+                <a href="/pricing" className="footer-item">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a href="/faq" className="footer-item">
+                  FAQ
+                </a>
+              </li>
+            </ul>
           </div>
-          <div className="field">
-            <label htmlFor="message">Message</label>
-            <textarea name="message" id="message" rows="3" />
+          <div className="column">
+            <div className="footer-item-header">Connect</div>
+            <ul className="list-unstyled">
+              <li>
+                <a href="/contact" className="footer-item">
+                  Contact us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://twitter.com/gona"
+                  className="footer-item"
+                  target="noopener"
+                >
+                  Twitter
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://telegram.me/gona"
+                  className="footer-item"
+                  target="noopener"
+                >
+                  Telegram
+                </a>
+              </li>
+            </ul>
           </div>
-          <ul className="actions">
-            <li>
-              <input type="submit" value="Send Message" />
-            </li>
-          </ul>
-        </form>
-      </section>
-      <section className="split contact">
-        <section className="alt">
-          <h3>Address</h3>
-          <p>
-            1234 Somewhere Road #87257<br />
-            Nashville, TN 00000-0000
-          </p>
-        </section>
-        <section>
-          <h3>Phone</h3>
-          <p>
-            <a href="#">(000) 000-0000</a>
-          </p>
-        </section>
-        <section>
-          <h3>Email</h3>
-          <p>
-            <a href="#">info@untitled.tld</a>
-          </p>
-        </section>
-        <section>
-          <h3>Social</h3>
-          <ul className="icons alt">
-            <li>
-              <a href="#" className="icon alt fa-twitter">
-                <span className="label">Twitter</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon alt fa-facebook">
-                <span className="label">Facebook</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon alt fa-instagram">
-                <span className="label">Instagram</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon alt fa-github">
-                <span className="label">GitHub</span>
-              </a>
-            </li>
-          </ul>
-        </section>
-      </section>
+          <div className="column">
+            <div className="footer-item-header">Legal</div>
+            <ul className="list-unstyled">
+              <li>
+                <a href="/terms" className="footer-item">
+                  Terms of service
+                </a>
+              </li>
+              <li>
+                <a href="/privacy" className="footer-item">
+                  Privacy policy
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p className="has-text-centered copyright has-text-grey-light">
+          Copyright©2018 planaria.com. All rights reserved
+        </p>
+      </div>
     </footer>
   )
 }
