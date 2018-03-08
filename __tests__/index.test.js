@@ -4,12 +4,12 @@ describe('/ (Home Page)', () => {
   })
 
   it('should load without error', async () => {
-    await expect(page).toMatch('This is Massively')
+    await expect(page).toMatch('Homepage')
   })
 
   it('should click using selector', async () => {
-    await expect(page).toClick('a[href="/about"]')
+    await expect(page).toClick('a[href="/signin"]')
     const { pathname } = await page.evaluate(() => document.location)
-    expect(pathname).toBe('/about')
+    expect(pathname).toBe('/signin')
   })
 })
