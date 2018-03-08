@@ -1,6 +1,6 @@
 {
   "name": "gona-for-web",
-  "version": "0.3.0",
+  "version": "0.4.1",
   "description": "",
   "main": "index.js",
   "license": "MIT",
@@ -29,7 +29,7 @@
     "commitmsg": "npm run lint:msg",
     "precommit": "lint-staged",
     "prepush": "npm test",
-    "release": "conventional-github-releaser -p angular",
+    "release": "conventional-github-releaser -p angular -r 0",
     "docker:build": "docker build --tag seed-next-app . && npm run docker:images",
     "docker:images": "docker images | grep seed-next-app",
     "docker:run": "docker run -dit -p 8081:3000 --name seed-next-app seed-next-app:latest",
