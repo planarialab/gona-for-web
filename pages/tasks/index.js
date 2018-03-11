@@ -1,8 +1,8 @@
 // @flow
 import React from 'react'
-import Link from 'next/link'
 
 import TaskItem from '../../components/tasks/TaskItem'
+import TaskMenu from '../../components/tasks/TaskMenu'
 import { LayoutTask } from '../../components'
 type Props = {}
 
@@ -30,25 +30,7 @@ class Tasks extends React.Component<Props, null> {
           <div className="container" style={{ padding: '0 100px' }}>
             <div className="columns is-mobile">
               <div className="column is-narrow">
-                <div style={{ width: '200px' }}>
-                  <ul>
-                    <li>
-                      <Link href="">
-                        <a>Tomorrow</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="">
-                        <a>Today</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="">
-                        <a>Yesterday</a>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
+                <TaskMenu />
               </div>
               <div className="column" style={{ minWidth: '500px' }}>
                 <ul>
