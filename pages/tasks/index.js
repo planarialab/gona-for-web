@@ -4,11 +4,12 @@ import React from 'react'
 import TaskItem from '../../components/tasks/TaskItem'
 import TaskMenu from '../../components/tasks/TaskMenu'
 import { LayoutTask } from '../../components'
+
 type Props = {}
 
 class Tasks extends React.Component<Props, null> {
-  static async getInitialProps ({ query }) {
-    return {}
+  static async getInitialProps ({ query, pathname, asPath }) {
+    return { pathname, asPath }
   }
 
   render () {
@@ -30,7 +31,7 @@ class Tasks extends React.Component<Props, null> {
           <div className="container" style={{ padding: '0 100px' }}>
             <div className="columns is-mobile">
               <div className="column is-narrow">
-                <TaskMenu />
+                <TaskMenu {...this.props} />
               </div>
               <div className="column" style={{ minWidth: '500px' }}>
                 <ul>
