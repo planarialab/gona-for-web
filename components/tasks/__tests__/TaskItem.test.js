@@ -3,7 +3,7 @@ import TaskItem from '../TaskItem'
 import renderer from 'react-test-renderer'
 
 test('should render TaskItem component', () => {
-  const component = renderer.create(<TaskItem>task1</TaskItem>)
+  const component = renderer.create(<TaskItem done="false">task1</TaskItem>)
   const { root } = component
   let tree = component.toJSON()
 

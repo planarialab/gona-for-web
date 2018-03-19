@@ -1,9 +1,13 @@
 // @flow
 import React from 'react'
+import withRedux from 'next-redux-wrapper'
 
-import TaskItem from '../../components/tasks/TaskItem'
+import TaskItemList from '../../components/tasks/TaskItemList'
 import TaskMenu from '../../components/tasks/TaskMenu'
 import { LayoutTask } from '../../components'
+import configureStore from '../../store'
+
+const mapDispatchToProps = dispatch => ({})
 
 type Props = {}
 
@@ -34,28 +38,7 @@ class Tasks extends React.Component<Props, null> {
                 <TaskMenu {...this.props} />
               </div>
               <div className="column" style={{ minWidth: '500px' }}>
-                <ul>
-                  <li>
-                    <TaskItem>task 0</TaskItem>
-                  </li>
-                  <li>
-                    <TaskItem>
-                      길고길고길고길고길고길고길ㄹ로댜몽띄어쓰기도없이길고길다말다길까말까너무나도긴할일은어떻게
-                    </TaskItem>
-                  </li>
-                  <li>
-                    <TaskItem>
-                      https://hackernoon.com/five-things-i-learned-building-a-saas-app-with-vue-js-90b6a5acd275
-                      문서 번역해야지
-                    </TaskItem>
-                  </li>
-                  <li>
-                    <TaskItem>task 1</TaskItem>
-                  </li>
-                  <li>
-                    <TaskItem>task 2</TaskItem>
-                  </li>
-                </ul>
+                <TaskItemList />
               </div>
             </div>
           </div>
@@ -65,4 +48,4 @@ class Tasks extends React.Component<Props, null> {
   }
 }
 
-export default Tasks
+export default withRedux(configureStore, null, mapDispatchToProps)(Tasks)
