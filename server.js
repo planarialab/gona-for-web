@@ -20,30 +20,36 @@ const routeHandler = routes.getRequestHandler(
   }
 )
 
-app.prepare().then(() => {
-  const server = express()
+app
+  .prepare()
+  .then(() => {
+    const server = express()
 
-  /* secure */
-  server.use(helmet())
-  /* gzip */
-  server.use(compression({ threshold: 0 }))
+    /* secure */
+    server.use(helmet())
+    /* gzip */
+    server.use(compression({ threshold: 0 }))
 
-  /* LRU Cache */
-  /* Routes with LRU Cache */
-  server.use(routeHandler)
+    /* LRU Cache */
+    /* Routes with LRU Cache */
+    server.use(routeHandler)
 
-  /* Server API */
-  // server.use('/api', someRoutes)
+    /* Server API */
+    // server.use('/api', someRoutes)
 
-  /* Service Worker */
-  server.get('/service-worker.js', (req, res) =>
-    app.serveStatic(req, res, resolve('./.next/service-worker.js'))
-  )
+    /* Service Worker */
+    server.get('/service-worker.js', (req, res) =>
+      app.serveStatic(req, res, resolve('./.next/service-worker.js'))
+    )
 
-  server.get('*', (req, res) => handler(req, res))
+    server.get('*', (req, res) => handler(req, res))
 
-  server.listen(port, err => {
-    if (err) throw err
-    console.log(`> Ready on http://localhost:${port}`)
+    server.listen(port, err => {
+      if (err) throw err
+      console.log(`> Ready on http://localhost:${port}`)
+    })
   })
-})
+  .catch(ex => {
+    console.error(ex.stack)
+    process.exit(1)
+  })
