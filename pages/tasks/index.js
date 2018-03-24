@@ -3,7 +3,7 @@ import React from 'react'
 
 import TaskItem from '../../components/tasks/TaskItem'
 import TaskMenu from '../../components/tasks/TaskMenu'
-import { LayoutTask } from '../../components'
+import { Layout } from '../../components'
 
 type Props = {}
 
@@ -14,7 +14,7 @@ class Tasks extends React.Component<Props, null> {
 
   render () {
     return (
-      <LayoutTask>
+      <Layout>
         <style jsx>{`
           * {
             color: black;
@@ -60,7 +60,7 @@ class Tasks extends React.Component<Props, null> {
             </div>
           </div>
         </section>
-      </LayoutTask>
+      </Layout>
     )
   }
 }

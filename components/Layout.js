@@ -4,8 +4,8 @@ import Head from 'next/head'
 import NProgress from 'nprogress'
 import Router from 'next/router'
 
-import '../styles/bulma.sass'
 import { Nav, Footer, Copyright } from './'
+import '../styles/gona.sass'
 
 Router.onRouteChangeStart = url => {
   NProgress.start()
@@ -33,32 +33,6 @@ export default class Layout extends React.Component<Props, {}> {
 
   render () {
     const { children } = this.props
-    return (
-      <React.Fragment>
-        <Head>
-          <link
-            rel="stylesheet"
-            type="text/css"
-            href="/static/css/nprogress.css"
-          />
-          <link
-            rel="stylesheet"
-            type="text/css"
-            href="/static/css/font-awesome.min.css"
-          />
-          <link rel="stylesheet" href="/_next/static/style.css" />
-        </Head>
-
-        {/* Main */}
-        <div>
-          <main>{children}</main>
-        </div>
-
-        {/* Footer */}
-        <Footer />
-
-        {/* Copyright */}
-      </React.Fragment>
-    )
+    return <main>{children}</main>
   }
 }

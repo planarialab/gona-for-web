@@ -1,6 +1,8 @@
 import * as React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 
+import bootstrap from 'bootstrap/dist/css/bootstrap.min.css'
+
 export default class extends Document {
   static async getInitialProps (...args) {
     const d: any = Document
@@ -31,6 +33,15 @@ export default class extends Document {
           <meta property="twitter:image" content="SITE_IMAGE" />
 
           <link rel="shortcut icon" href="/static/img/favicon.ico" />
+          <style jsx global>
+            {bootstrap}
+          </style>
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="/static/css/nprogress.css"
+          />
+          <link rel="stylesheet" href="/_next/static/style.css" />
 
           <noscript>
             <link rel="stylesheet" href="assets/css/noscript.css" />
