@@ -4,8 +4,8 @@ import Head from 'next/head'
 import NProgress from 'nprogress'
 import Router from 'next/router'
 
-import '../styles/bulma.sass'
 import { Nav, Footer, Copyright } from './'
+import bootstrap from 'bootstrap/dist/css/bootstrap.min.css'
 
 Router.onRouteChangeStart = url => {
   NProgress.start()
@@ -45,6 +45,9 @@ export default class Layout extends React.Component<Props, {}> {
         </Head>
 
         <main>{children}</main>
+        <style jsx global>
+          {bootstrap}
+        </style>
       </React.Fragment>
     )
   }

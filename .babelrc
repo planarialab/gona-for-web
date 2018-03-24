@@ -3,15 +3,41 @@
     "development": {
       "presets": ["next/babel"],
       "plugins": [
+        [
+          "inline-import",
+          {
+            "extensions": [".css"]
+          }
+        ],
         ["transform-define", "./env.config.js"],
         "transform-flow-strip-types"
       ]
     },
     "production": {
-      "presets": ["next/babel"]
+      "presets": ["next/babel"],
+      "plugins": [
+        [
+          "inline-import",
+          {
+            "extensions": [".css"]
+          }
+        ],
+        ["transform-define", "./env.config.js"],
+        "transform-flow-strip-types"
+      ]
     },
     "test": {
-      "presets": [["next/babel", { "preset-env": { "modules": "commonjs" } }]]
+      "presets": [["next/babel", { "preset-env": { "modules": "commonjs" } }]],
+      "plugins": [
+        [
+          "inline-import",
+          {
+            "extensions": [".css"]
+          }
+        ],
+        ["transform-define", "./env.config.js"],
+        "transform-flow-strip-types"
+      ]
     }
   }
 }
