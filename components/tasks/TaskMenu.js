@@ -8,7 +8,6 @@ export default ({ asPath }: Props) => (
   <div className="profile">
     <style jsx>{`
     .profile {
-      width: 200px
       text-align: center
     }
     .active {
@@ -16,6 +15,10 @@ export default ({ asPath }: Props) => (
     }
     img {
       width: 100px
+      margin: 10px
+    }
+    ul {
+      margin: 10px
     }
   `}</style>
     <img src="/static/images/face/147144.svg" alt="" />
