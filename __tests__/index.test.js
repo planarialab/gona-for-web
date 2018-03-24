@@ -8,7 +8,7 @@ describe('/ (Home Page)', () => {
   })
 
   it('should click using selector', async () => {
-    await expect(page).toClick('a[href="/signin"]')
+    await expect(page).toClick('a', { text: 'Sign in' })
     const { pathname } = await page.evaluate(() => document.location)
     expect(pathname).toBe('/signin')
   })
