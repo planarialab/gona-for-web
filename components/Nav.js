@@ -32,6 +32,9 @@ const Nav = (props: Props) => {
           <Link href="/signin">
             <a className="nav-menu-item has-text-light">Sign in</a>
           </Link>
+          <Link href="/tasks">
+            <a className="nav-menu-item has-text-light">Tasks</a>
+          </Link>
         </div>
       </div>
     </nav>
