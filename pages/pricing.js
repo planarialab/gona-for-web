@@ -4,7 +4,7 @@ import React from 'react'
 import { Layout } from '../components'
 
 export default () => (
-  <Layout role="main">
+  <Layout title="Pricing | Gona" role="main">
     <style jsx>{`
       .pricing-header {
         max-width: 700px;

@@ -18,7 +18,7 @@ class Index extends React.Component<Props, null> {
 
   render () {
     return (
-      <Layout role="main">
+      <Layout title="Gona" role="main">
         <Home />
       </Layout>
     )

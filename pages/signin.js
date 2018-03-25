@@ -9,7 +9,7 @@ type Props = {}
 class SignIn extends React.Component<Props, *> {
   render () {
     return (
-      <Layout hideNav={true}>
+      <Layout title="Sign In | Gona" hideNav={true}>
         <div className="page">
           <div className="page-single">
             <div className="container">

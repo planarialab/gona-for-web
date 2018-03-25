@@ -14,7 +14,7 @@ class Tasks extends React.Component<Props, null> {
 
   render () {
     return (
-      <Layout role="main" hideNav={true}>
+      <Layout title="Tasks | Gona" role="main" hideNav={true}>
         <style jsx>{`
           * {
             color: black;
