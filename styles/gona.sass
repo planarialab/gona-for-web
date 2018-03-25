@@ -30,8 +30,18 @@ body
   overflow-y: scroll
   position: relative
 
+html
+  font-size: 14px
+
+@media (min-width: 768px)
+  html
+    font-size: 16px
+
 main
   height: 100%
+
+main[role="main"]
+  padding-top: 70px
 
 .page
   display: -ms-flexbox

@@ -6,7 +6,7 @@ import { Layout } from '../components'
 
 type Props = {}
 
-class SignIn extends React.Component<Props, *> {
+class SignUp extends React.Component<Props, *> {
   render () {
     return (
       <Layout hideNav={true}>
@@ -15,14 +15,6 @@ class SignIn extends React.Component<Props, *> {
             <div className="container">
               <div className="row">
                 <div className="col col-login mx-auto">
-                  <div className="text-center mb-6">
-                    <img
-                      src="/static/images/logo.png"
-                      className="h-6"
-                      width="32"
-                      alt=""
-                    />
-                  </div>
                   <form className="card" action="" method="post">
                     <div className="card-body p-6">
                       <div className="card-title">Login to your account</div>
@@ -69,17 +61,11 @@ class SignIn extends React.Component<Props, *> {
                           type="submit"
                           className="btn btn-primary btn-block"
                         >
-                          Sign in
+                          Sign Up
                         </button>
                       </div>
                     </div>
                   </form>
-                  <div className="text-center text-muted">
-                    Don't have account yet?{' '}
-                    <Link href="/signup">
-                      <a>Sign up</a>
-                    </Link>
-                  </div>
                 </div>
               </div>
             </div>
@@ -90,4 +76,4 @@ class SignIn extends React.Component<Props, *> {
   }
 }
 
-export default SignIn
+export default SignUp

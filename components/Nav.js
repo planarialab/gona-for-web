@@ -7,37 +7,49 @@ type Props = {}
 
 const Nav = (props: Props) => {
   return (
-    <nav className="navbar level">
-      <div className="level-left">
-        <div className="level-item">
-          <p className="subtitle is-5">
+    <React.Fragment>
+      <style jsx>{`
+        .navbar-brand img {
+          width: 20px
+          margin-right: 10px
+        }
+        .navbar-brand span {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      `}</style>
+      <nav className="fixed-top">
+        <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom box-shadow">
+          <h5 className="my-0 mr-md-auto font-weight-normal">
             <Link href="/">
-              <a className="has-text-light">Gona</a>
+              <a className="navbar-brand">
+                <img src="/static/images/logo.png" alt="" />
+                <span>Planaria Lab</span>
+              </a>
             </Link>
-          </p>
-        </div>
-      </div>
-
-      <div className="level-right">
-        <div className="nav-menu">
-          <Link href="/pricing">
-            <a className="nav-menu-item has-text-light">Pricing</a>
-          </Link>
-          <Link href="/faq">
-            <a className="nav-menu-item has-text-light">FAQ</a>
-          </Link>
-          <Link href="/contact">
-            <a className="nav-menu-item has-text-light">Contact</a>
-          </Link>
-          <Link href="/signin">
-            <a className="nav-menu-item has-text-light">Sign in</a>
-          </Link>
+          </h5>
+          <div className="my-2 my-md-0 mr-md-3">
+            <Link href="/features">
+              <a className="p-2 text-dark">Features</a>
+            </Link>
+            <Link href="/faq">
+              <a className="p-2 text-dark">FAQ</a>
+            </Link>
+            <Link href="/pricing">
+              <a className="p-2 text-dark">Pricing</a>
+            </Link>
+            <Link href="/signin">
+              <a className="p-2 text-dark">Sign In</a>
+            </Link>
+          </div>
           <Link href="/tasks">
-            <a className="nav-menu-item has-text-light">Tasks</a>
+            <a className="btn btn-outline-primary" href="#">
+              Tasks
+            </a>
           </Link>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </React.Fragment>
   )
 }
 

@@ -7,7 +7,7 @@ export default () => (
   <Layout role="main">
     <div className="container">
       <div className="row">
-        <div className="col-lg-12">faq</div>
+        <div className="col-lg-12">feature</div>
       </div>
     </div>
   </Layout>

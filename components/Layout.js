@@ -14,7 +14,9 @@ Router.onRouteChangeComplete = () => NProgress.done()
 Router.onRouteChangeError = () => NProgress.done()
 
 type Props = {
-  children: any
+  children: any,
+  hideNav?: boolean,
+  role?: string
 }
 
 export default class Layout extends React.Component<Props, {}> {
@@ -32,7 +34,12 @@ export default class Layout extends React.Component<Props, {}> {
   }
 
   render () {
-    const { children } = this.props
-    return <main>{children}</main>
+    const { children, hideNav, role = '' } = this.props
+    return (
+      <React.Fragment>
+        {hideNav ? null : <Nav />}
+        <main role={role}>{children}</main>
+      </React.Fragment>
+    )
   }
 }
