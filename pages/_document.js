@@ -13,10 +13,6 @@ export default class extends Document {
     return { ...documentProps, ...page }
   }
 
-  componentDidMount () {
-    console.log('document load')
-  }
-
   render () {
     return (
       <html lang="ko">

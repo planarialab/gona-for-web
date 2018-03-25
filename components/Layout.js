@@ -21,19 +21,6 @@ type Props = {
 }
 
 export default class Layout extends React.Component<Props, {}> {
-  componentDidMount () {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('/service-worker.js')
-        .then(registration =>
-          console.info('service worker registration successful')
-        )
-        .catch(err =>
-          console.warn('service worker registration failed', err.message)
-        )
-    }
-  }
-
   render () {
     const { children, hideNav, title = '', role = '' } = this.props
     return (
