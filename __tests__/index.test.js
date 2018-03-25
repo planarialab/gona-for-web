@@ -4,7 +4,7 @@ describe('/ (Home Page)', () => {
   })
 
   it('should load without error', async () => {
-    await expect(page).toMatch('Homepage')
+    await expect(page).toMatch('Planaria Lab')
   })
 
   it('should click using selector', async () => {

@@ -39,7 +39,7 @@ const Nav = (props: Props) => {
               <a className="p-2 text-dark">Pricing</a>
             </Link>
             <Link href="/signin">
-              <a className="p-2 text-dark">Sign In</a>
+              <a className="p-2 text-dark">Sign in</a>
             </Link>
           </div>
           <Link href="/tasks">
