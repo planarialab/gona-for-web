@@ -5,7 +5,7 @@ type Props = {
   chidlren?: any
 }
 
-export default ({ done, children }: Props) => (
+export default ({ done = 'false', children }: Props) => (
   <React.Fragment>
     <style jsx>{`
       input {
