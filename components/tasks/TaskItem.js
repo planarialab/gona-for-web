@@ -5,7 +5,7 @@ type Props = {
   chidlren?: any
 }
 
-export default ({ children }: Props) => (
+export default ({ done, children }: Props) => (
   <React.Fragment>
     <style jsx>{`
       input {
@@ -20,9 +20,11 @@ export default ({ children }: Props) => (
         vertical-align: bottom;
       }
     `}</style>
-    <label>
-      <input type="checkbox" />
-      <span>{children}</span>
-    </label>
+    <li>
+      <label>
+        <input type="checkbox" defaultChecked={done} />
+        <span>{children}</span>
+      </label>
+    </li>
   </React.Fragment>
 )
